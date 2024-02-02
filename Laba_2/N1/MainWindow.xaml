@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:N1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="N1" ResizeMode="NoResize" Height="145" Width="265">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Height" Value="24"></Setter>
+            <Setter Property="Width" Value="24"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <TextBox x:Name="tb_firstNumA" HorizontalAlignment="Left" Margin="33,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_secondNumB" HorizontalAlignment="Left" Margin="33,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_result" HorizontalAlignment="Left" Margin="153,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"/>
+
+        <Button x:Name="btn_sum" Content="+" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Click="btn_sum_Click"/>
+        <Button x:Name="btn_sub" Content="-" HorizontalAlignment="Left" Margin="39,41,0,0" VerticalAlignment="Top" Click="btn_sub_Click"/>
+        <Button x:Name="btn_mul" Content="*" HorizontalAlignment="Left" Margin="69,41,0,0" VerticalAlignment="Top" Click="btn_mul_Click"/>
+        <Button x:Name="btn_div" Content="/" HorizontalAlignment="Left" Margin="101,41,0,0" VerticalAlignment="Top" Click="btn_div_Click"/>
+
+        <Label Content="A" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="B" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="=" HorizontalAlignment="Left" Margin="130,40,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

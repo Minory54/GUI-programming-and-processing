@@ -24,5 +24,62 @@ namespace N1
         {
             InitializeComponent();
         }
+
+        double readDouble (TextBox textBox)
+        {
+            double doubleNum;
+            string tbNum = textBox.Text.Replace('.',',');
+
+            while (!(double.TryParse(tbNum, out doubleNum)))
+            {
+                MessageBox.Show("Неверно задано число.", "Ошибка!");
+                textBox.BorderBrush = Brushes.Red;
+                return 0;
+            }
+            textBox.BorderBrush = Brushes.Green;
+
+
+            return doubleNum;
+        }
+
+        private void btn_sum_Click(object sender, RoutedEventArgs e)
+        {
+            double firstNumA = readDouble(tb_firstNumA);
+            double secondNumB = readDouble(tb_secondNumB);
+
+            double result = firstNumA + secondNumB;
+
+            tb_result.Text = result.ToString();
+        }
+
+        private void btn_sub_Click(object sender, RoutedEventArgs e)
+        {
+            double firstNumA = readDouble(tb_firstNumA);
+            double secondNumB = readDouble(tb_secondNumB);
+
+            double result = firstNumA - secondNumB;
+
+            tb_result.Text = result.ToString();
+        }
+
+        private void btn_mul_Click(object sender, RoutedEventArgs e)
+        {
+            double firstNumA = readDouble(tb_firstNumA);
+            double secondNumB = readDouble(tb_secondNumB);
+
+            double result = firstNumA * secondNumB;
+
+            tb_result.Text = result.ToString();
+        }
+
+        private void btn_div_Click(object sender, RoutedEventArgs e)
+        {
+            double firstNumA = readDouble(tb_firstNumA);
+            double secondNumB = readDouble(tb_secondNumB);
+
+            double result = firstNumA / secondNumB;
+
+            tb_result.Text = result.ToString();
+        }
     }
 }

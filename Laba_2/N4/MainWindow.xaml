@@ -1,0 +1,39 @@
+﻿<Window x:Class="N4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:N4"
+        mc:Ignorable="d"
+        Title="N4" ResizeMode="NoResize" Height="90" Width="425">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Height" Value="24"></Setter>
+            <Setter Property="Width" Value="24"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Label Content="Год:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Месяц:" HorizontalAlignment="Left" Margin="128,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Число:" HorizontalAlignment="Left" Margin="298,10,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="cmb_year" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" Width="64"/>
+        <ComboBox x:Name="cmb_month" HorizontalAlignment="Left" Margin="188,13,0,0" VerticalAlignment="Top" Width="91"/>
+        <ComboBox x:Name="cmb_day" HorizontalAlignment="Left" Margin="355,13,0,0" VerticalAlignment="Top" Width="37" />
+
+    </Grid>
+</Window>

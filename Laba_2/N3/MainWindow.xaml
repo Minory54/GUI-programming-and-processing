@@ -1,0 +1,33 @@
+﻿<Window x:Class="N3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:N3"
+        mc:Ignorable="d"
+        Title="N3" ResizeMode="NoResize" Height="250" Width="600">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Height" Value="24"></Setter>
+            <Setter Property="Width" Value="24"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <ListBox x:Name="lb_planets" Margin="10,10,466,10" SelectionChanged="lb_planets_SelectionChanged"/>
+        <Label x:Name="l_namePlanet" FontWeight="Bold" HorizontalAlignment="Left" Margin="139,10,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="l_descriptionPlanet" HorizontalAlignment="Left" Margin="144,34,0,0" TextWrapping="Wrap" Width="430" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
