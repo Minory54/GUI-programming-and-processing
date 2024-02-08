@@ -31,9 +31,9 @@
         <Label Content="Месяц:" HorizontalAlignment="Left" Margin="128,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Число:" HorizontalAlignment="Left" Margin="298,10,0,0" VerticalAlignment="Top"/>
 
-        <ComboBox x:Name="cmb_year" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" Width="64"/>
-        <ComboBox x:Name="cmb_month" HorizontalAlignment="Left" Margin="188,13,0,0" VerticalAlignment="Top" Width="91"/>
-        <ComboBox x:Name="cmb_day" HorizontalAlignment="Left" Margin="355,13,0,0" VerticalAlignment="Top" Width="37" />
+        <ComboBox x:Name="cmb_year" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" Width="64" SelectionChanged="cmb_year_SelectionChanged"/>
+        <ComboBox x:Name="cmb_month" HorizontalAlignment="Left" Margin="188,13,0,0" VerticalAlignment="Top" Width="91" SelectionChanged="cmb_month_SelectionChanged"/>
+        <ComboBox x:Name="cmb_day" HorizontalAlignment="Left" Margin="355,13,0,0" VerticalAlignment="Top" Width="37"  DropDownOpened="cmb_day_DropDownOpened" SelectionChanged="cmb_day_SelectionChanged"/>
 
     </Grid>
 </Window>
