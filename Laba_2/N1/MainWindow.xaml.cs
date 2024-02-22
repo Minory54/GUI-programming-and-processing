@@ -38,7 +38,6 @@ namespace N1
             }
             textBox.BorderBrush = Brushes.Green;
 
-
             return doubleNum;
         }
 

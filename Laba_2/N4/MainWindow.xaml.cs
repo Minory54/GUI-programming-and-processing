@@ -25,6 +25,8 @@ namespace N4
         {
             InitializeComponent();
 
+            DateTime.DaysInMonth(2024, 2);
+
             int[] year = {2019, 2020, 2021, 2022, 2023};
             string[] month = { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
 
@@ -120,37 +122,35 @@ namespace N4
             int selectedDay = Convert.ToInt32(cmb_day.SelectedValue);
 
 
-            //int dayPassed = Math.Abs(DateTime.Now.Day - day);          
-            //int monthPassed = Math.Abs(DateTime.Now.Month - indexMonth;
-            //int yearPassed = DateTime.Now.Year - year;
+            int dayPassed = DateTime.Now.Day - selectedDay;
+            int monthPassed = DateTime.Now.Month - selectedIndexMonth;
+            int yearPassed = DateTime.Now.Year - selectedYear;
 
-            int dayPassed = 0;
-            int monthPassed = 0;
-            int yearPassed = 0;
+            //int dayPassed = 0;
+            //int monthPassed = 0;
+            //int yearPassed = 0;
 
+            //if (DateTime.Now.Day - selectedDay < 0)
+            //{
+            //    dayPassed = daysCountInMonth(selectedYear, selectedIndexMonth) + DateTime.Now.Day - selectedDay;
+            //    monthPassed = DateTime.Now.Month - selectedIndexMonth - 1;
+            //}
+            //else
+            //{
+            //    dayPassed = DateTime.Now.Day - selectedDay;
+            //    monthPassed = DateTime.Now.Month - selectedIndexMonth;
+            //}
 
-            if (DateTime.Now.Day - selectedDay < 0)
-            {
-                dayPassed = daysCountInMonth(selectedYear, selectedIndexMonth) + DateTime.Now.Day - selectedDay;
-                monthPassed = DateTime.Now.Month - selectedIndexMonth - 1;
-            }
-            else
-            {
-                dayPassed = DateTime.Now.Day - selectedDay;
-                monthPassed = DateTime.Now.Month - selectedIndexMonth;
-            }
-
-            if (DateTime.Now.Month - selectedIndexMonth < 0 || daysCountInMonth(selectedYear, monthPassed) + monthPassed < 0)
-            {
-                monthPassed = 12 + DateTime.Now.Month - selectedIndexMonth;
-                yearPassed = DateTime.Now.Year - selectedYear - 1;
-            }
-            else
-            {
-                monthPassed = DateTime.Now.Month - selectedIndexMonth;
-                yearPassed = DateTime.Now.Year - selectedYear;
-            }
-
+            //if (DateTime.Now.Month - selectedIndexMonth < 0 || daysCountInMonth(selectedYear, monthPassed) + monthPassed < 0)
+            //{
+            //    monthPassed = 12 + DateTime.Now.Month - selectedIndexMonth;
+            //    yearPassed = DateTime.Now.Year - selectedYear - 1;
+            //}
+            //else
+            //{
+            //    monthPassed = DateTime.Now.Month - selectedIndexMonth;
+            //    yearPassed = DateTime.Now.Year - selectedYear;
+            //}
 
             if (cmb_year.SelectedItem != null & cmb_month.SelectedItem != null & cmb_day.SelectedItem != null)
             {

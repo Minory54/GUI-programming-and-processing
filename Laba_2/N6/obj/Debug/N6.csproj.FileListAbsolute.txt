@@ -1,0 +1,15 @@
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\bin\Debug\N6.exe.config
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\bin\Debug\N6.exe
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\bin\Debug\N6.pdb
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6.csproj.AssemblyReference.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\MainWindow.g.cs
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\App.g.cs
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6_MarkupCompile.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6_MarkupCompile.lref
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\MainWindow.baml
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6.g.resources
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6.Properties.Resources.resources
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6.csproj.GenerateResource.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6.csproj.CoreCompileInputs.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6.exe
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_2\N6\obj\Debug\N6.pdb

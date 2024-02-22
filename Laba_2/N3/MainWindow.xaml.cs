@@ -27,7 +27,6 @@ namespace N3
             lb_planets.Items.Add("Меркурий");
             lb_planets.Items.Add("Венера");
             lb_planets.Items.Add("Сатурн");
-
         }
 
         private void lb_planets_SelectionChanged(object sender, SelectionChangedEventArgs e)
