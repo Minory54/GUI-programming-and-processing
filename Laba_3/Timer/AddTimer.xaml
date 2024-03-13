@@ -1,0 +1,44 @@
+﻿<Window x:Class="Timer.AddTimer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Timer"
+        mc:Ignorable="d"
+        Title="Добавление таймера" ResizeMode="NoResize" Height="372" Width="215">
+
+    <Window.Resources>
+        <Style TargetType="ListBox">
+            <Setter Property="FontSize" Value="11"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Height" Value="24"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="8,0"/>
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Label Content="Добавление таймера" Margin="26,10,27,0" VerticalAlignment="Top" FontSize="14"/>
+
+        <Label Content="Имя: " HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_timerName" HorizontalAlignment="Left" Margin="54,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Часы" HorizontalAlignment="Left" Margin="19,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_timerHour" HorizontalAlignment="Left" Margin="10,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+
+        <Label Content="Минуты" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_timerMinute" Margin="70,101,71,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+
+        <Label Content="Секунды" HorizontalAlignment="Left" Margin="132,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_timerSecond" Margin="0,101,10,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
+
+        <Calendar x:Name="cal_timerCalendar" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" IsTodayHighlighted="False"/>
+
+        <Button x:Name="bt_addTimer" Content="Добавить" Margin="10,0,0,10" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="86" Click="bt_addTimer_Click"/>
+        <Button x:Name="bt_cancel" Content="Отмена" Margin="103,0,0,10" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="86" Click="bt_cancel_Click"/>
+
+    </Grid>
+</Window>

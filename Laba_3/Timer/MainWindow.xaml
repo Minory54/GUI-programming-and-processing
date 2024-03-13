@@ -5,26 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Timer"
         mc:Ignorable="d"
-        Title="Timer" ResizeMode="NoResize" Height="425" Width="255">
+        Title="Timer" Height="425" Width="300">
 
-    <Window.Resources>
-        <Style TargetType="ListBox">
-            <Setter Property="FontSize" Value="11"></Setter>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="FontSize" Value="16"></Setter>
-            <Setter Property="Height" Value="24"></Setter>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="8,0"/>
-            <Setter Property="Background" Value="Lavender"/>
-        </Style>
-        <Style TargetType="Label">
-            <Setter Property="FontSize" Value="16"></Setter>
-        </Style>
-    </Window.Resources>
     <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,128,10,10"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
 
+        <Menu>
+            <MenuItem Header="Файл" >
+                <MenuItem x:Name="mi_openFile" Header="Открыть" Click="mi_openFile_Click"></MenuItem>
+                <MenuItem x:Name="mi_saveFile" Header="Сохранить" Click="mi_saveFile_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Таймеры">
+                <MenuItem x:Name="mi_addTimer" Header="Добавить" Click="mi_addTimer_Click" ></MenuItem>
+                <MenuItem x:Name="mi_editTimer" Header="Изменить" Click="mi_editTimer_Click" ></MenuItem>
+                <MenuItem x:Name="mi_delTimer" Header="Удалить" Click="mi_delTimer_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <ListBox x:Name="lb_timerList" Margin="10,20,10,10" FontSize="11" SelectionChanged="lb_timerList_SelectionChanged"/>
+        
     </Grid>
 </Window>
