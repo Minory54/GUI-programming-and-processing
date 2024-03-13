@@ -1,0 +1,15 @@
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\bin\Debug\Timer.exe.config
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\bin\Debug\Timer.exe
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\bin\Debug\Timer.pdb
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.csproj.AssemblyReference.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\MainWindow.g.cs
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\App.g.cs
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer_MarkupCompile.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer_MarkupCompile.lref
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\MainWindow.baml
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.g.resources
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.Properties.Resources.resources
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.csproj.GenerateResource.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.csproj.CoreCompileInputs.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.exe
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.pdb

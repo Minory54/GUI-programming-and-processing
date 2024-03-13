@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Timer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Timer" ResizeMode="NoResize" Height="425" Width="255">
+
+    <Window.Resources>
+        <Style TargetType="ListBox">
+            <Setter Property="FontSize" Value="11"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Height" Value="24"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="8,0"/>
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="16"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,128,10,10"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
