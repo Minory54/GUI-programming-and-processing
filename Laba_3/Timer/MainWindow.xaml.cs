@@ -21,8 +21,11 @@ namespace Timer
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        Dictionary<string, DateTime> timerList = new Dictionary<string, DateTime>();
         DateTime dateTimeSelected = new DateTime();
+
+        public string editNameTimer;
+        public DateTime editTimerDateTime;
 
         public MainWindow()
         {
@@ -34,26 +37,22 @@ namespace Timer
             AddTimer addTimer = new AddTimer();
             if (addTimer.ShowDialog() == true) 
             {
-                foreach (var timer in addTimer.timerList) 
-                {
-                    lb_timerList.Items.Add($" \"{timer.Key}\": {timer.Value}");
-                    dateTimeSelected = timer.Value;
-                }
+                lb_timerList.Items.Add(addTimer.newTimerName);
+                timerList.Add(addTimer.newTimerName, addTimer.newTimerDateTime);
             }            
         }
 
         private void mi_editTimer_Click(object sender, RoutedEventArgs e)
         {
+            editNameTimer = (string)lb_timerList.SelectedValue;
+            editTimerDateTime = timerList[editNameTimer];
+            //timerList.Remove(editNameTimer);
+
             AddTimer addTimer = new AddTimer();
             if (addTimer.ShowDialog() == true)
             {
-                int i = lb_timerList.SelectedIndex;
-
-                foreach (var timer in addTimer.timerList)
-                {
-                    lb_timerList.Items[i] = $" \"{timer.Key}\": {timer.Value}";
-                    dateTimeSelected = timer.Value;
-                }
+                lb_timerList.SelectedItem = addTimer.newTimerName;
+                timerList.Add(addTimer.newTimerName, addTimer.newTimerDateTime);
             }
             
         }

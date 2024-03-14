@@ -30,3 +30,5 @@ C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_3\Timer
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\Timer.pdb
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\AddTimer.g.cs
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\AddTimer.baml
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\AddTimer.g.cs
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba_3\Timer\obj\Debug\AddTimer.baml
