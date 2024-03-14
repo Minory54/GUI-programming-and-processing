@@ -21,23 +21,12 @@ namespace Timer
     /// </summary>
     public partial class MainWindow : Window
     {
-        System.Windows.Threading.DispatcherTimer Timer;
-        DateTime dateTime = new DateTime();
 
-        int time_count = 0;
+        DateTime dateTimeSelected = new DateTime();
 
         public MainWindow()
         {
             InitializeComponent();
-
-            Timer = new System.Windows.Threading.DispatcherTimer();
-            Timer.Tick += new EventHandler(dispatcherTimer_Tick);
-            Timer.Interval = new TimeSpan(0, 0, 1);
-        }
-
-        private void dispatcherTimer_Tick(object sender, EventArgs e) //Обновляет Label
-        {
-            dateTime = dateTime.AddSeconds(-1);           
         }
 
         private void mi_addTimer_Click(object sender, RoutedEventArgs e)
@@ -47,13 +36,25 @@ namespace Timer
             {
                 foreach (var timer in addTimer.timerList) 
                 {
-                    lb_timerList.Items.Add($" \"{timer.Key}\": {timer.Value}");                   
+                    lb_timerList.Items.Add($" \"{timer.Key}\": {timer.Value}");
+                    dateTimeSelected = timer.Value;
                 }
             }            
         }
 
         private void mi_editTimer_Click(object sender, RoutedEventArgs e)
         {
+            AddTimer addTimer = new AddTimer();
+            if (addTimer.ShowDialog() == true)
+            {
+                int i = lb_timerList.SelectedIndex;
+
+                foreach (var timer in addTimer.timerList)
+                {
+                    lb_timerList.Items[i] = $" \"{timer.Key}\": {timer.Value}";
+                    dateTimeSelected = timer.Value;
+                }
+            }
             
         }
 
@@ -74,7 +75,7 @@ namespace Timer
                 byte[] array = new byte[fs.Length];
                 fs.Read(array, 0, array.Length);
                 string textFromFile = System.Text.Encoding.UTF8.GetString(array);
-                lb_timerList.Items.Add($"{ textFromFile}");
+                lb_timerList.Items.Add($"{textFromFile}");
             }
         }
 
@@ -98,7 +99,9 @@ namespace Timer
 
         private void lb_timerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            DateTime dateTimeNow = DateTime.Now;            
+            TimeSpan ts = dateTimeSelected - dateTimeNow;
+            MessageBox.Show("Дни:" + ts.Days + " Время: " + ts.Hours + ":" + ts.Minutes + ":" + ts.Seconds, "Оставшееся время");           
         }
     }
 }
