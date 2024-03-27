@@ -10,7 +10,7 @@ namespace N1
     {
         public int id { get; set; }
         public int id_Student { get; set; }
-        public int id_Subject { get; set; }
-        public int Grade { get; set; }
+        public int Physics { get; set; }
+        public int Math { get; set; }
     }
 }

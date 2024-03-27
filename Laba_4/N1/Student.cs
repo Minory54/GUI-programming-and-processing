@@ -12,14 +12,5 @@ namespace N1
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Surname { get; set; }
-
-        public Student() { }
-
-        public Student(string FirstName, string LastName, string Surname) 
-        { 
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Surname = Surname;
-        }
     }
 }

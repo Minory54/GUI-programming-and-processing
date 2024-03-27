@@ -13,6 +13,5 @@ namespace N1
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Journal> Journals { get; set; }
-        public DbSet<Subject> Subjects { get; set; }
     }
 }

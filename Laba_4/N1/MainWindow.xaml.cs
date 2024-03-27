@@ -42,9 +42,8 @@ namespace N1
 
                 var jurnal = from j in db.Journals
                              join stud in db.Students on j.id_Student equals stud.id
-                             join sub in db.Subjects on j.id_Subject equals sub.id
                              select new
-                               { id = j.id, StudentFIO = stud.FirstName + " " + stud.Surname + " " + stud.LastName, Subject = sub.Name, Grade = j.Grade};
+                               { id = j.id, StudentFIO = stud.FirstName + " " + stud.Surname + " " + stud.LastName, Physics = j.Physics, Math = j.Math};
 
                 dg_Jurnal.ItemsSource = jurnal.ToList();
 

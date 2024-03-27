@@ -21,8 +21,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="№" />
                 <DataGridTextColumn Width="*" Binding="{Binding StudentFIO}" Header="ФИО" />
-                <DataGridTextColumn Binding="{Binding Subject}" Header="Предмет" />
-                <DataGridTextColumn Binding="{Binding Grade}" Header="Оценка" />
+                <DataGridTextColumn Binding="{Binding Physics}" Header="Физика" />
+                <DataGridTextColumn Binding="{Binding Math}" Header="Математика" />
             </DataGrid.Columns>
         </DataGrid>
         <Menu Height="24px" Margin="0,0,0,0" VerticalAlignment="Top">
