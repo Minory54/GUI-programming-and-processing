@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:N1"
         mc:Ignorable="d"
-        Title="Добавление" Height="450" Width="800">
+        Title="Добавление" Height="350" Width="300">
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Width" Value="140"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="Width" Value="140"></Setter>
+            <Setter Property="BorderBrush" Value="#FFBEBEF1"></Setter>
+            <Setter Property="BorderThickness" Value="2px"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Lavender"></Setter>
+            <Setter Property="BorderBrush" Value="#FFBEBEF1"></Setter>
+            <Setter Property="BorderThickness" Value="2px"></Setter>
+            <Setter Property="Padding" Value="8,2,8,2"></Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <Label Content="Имя" Margin="0,24,0,0"/>
+        <TextBox x:Name="tb_FirstName" Margin="0,45,0,0"/>
+
+        <Label Content="Фамилия" Margin="0,68,0,0"/>
+        <TextBox x:Name="tb_Surname" Margin="0,89,0,0"/>
+
+        <Label Content="Отчество" Margin="0,112,0,0"/>
+        <TextBox x:Name="tb_LastName" Margin="0,133,0,0"/>
+
+        <Label Content="Оценка по физике" Margin="0,156,0,0"/>
+        <TextBox x:Name="tb_Physic" Margin="0,177,0,0"/>
+
+        <Label Content="Оценка по математике" Margin="0,200,0,0"/>
+        <TextBox x:Name="tb_Math" Margin="0,221,0,0"/>
+
+        <Button x:Name="btn_Save" Content="Сохранить" HorizontalAlignment="Center" Margin="0,0,0,24" Height="28" VerticalAlignment="Bottom" Click="btn_Save_Click"/>
     </Grid>
 </Window>

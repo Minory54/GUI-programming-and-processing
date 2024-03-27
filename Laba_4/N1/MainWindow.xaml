@@ -14,11 +14,17 @@
         <Style TargetType="DataGrid">
             <Setter Property="Background" Value="White"/>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Lavender"></Setter>
+            <Setter Property="BorderBrush" Value="#FFBEBEF1"></Setter>
+            <Setter Property="BorderThickness" Value="2px"></Setter>
+            <Setter Property="Padding" Value="8,2,8,2"></Setter>
+        </Style>
     </Window.Resources>
 
     <Grid>
         <Button x:Name="btn_add" Content="Добавить" HorizontalAlignment="Right" VerticalAlignment="Top" Click="btn_add_Click"/>
-        <DataGrid x:Name="dg_Journal" Margin="0,20,0,0" Loaded="dg_Journal_Loaded" AutoGenerateColumns="False">
+        <DataGrid x:Name="dg_Journal" Margin="0,24,0,0" Loaded="dg_Journal_Loaded" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="№" />
                 <DataGridTextColumn Width="*" Binding="{Binding StudentFIO}" Header="ФИО" />
