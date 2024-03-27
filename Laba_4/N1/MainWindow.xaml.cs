@@ -44,7 +44,7 @@ namespace N1
                              join stud in db.Students on j.id_Student equals stud.id
                              join sub in db.Subjects on j.id_Subject equals sub.id
                              select new
-                               { id = j.id, id_Student = stud.FirstName, id_Subject = sub.Name, Grade = j.Grade};
+                               { id = j.id, StudentFIO = stud.FirstName + " " + stud.Surname + " " + stud.LastName, Subject = sub.Name, Grade = j.Grade};
 
                 dg_Jurnal.ItemsSource = jurnal.ToList();
 
@@ -57,7 +57,7 @@ namespace N1
 
         private void dg_Jurnal_Loaded(object sender, RoutedEventArgs e)
         {
-
+            
            
 
             UpdateTable();
