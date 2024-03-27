@@ -46,4 +46,6 @@ C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_4\N1\ob
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_4\N1\obj\Debug\N1.csproj.Up2Date
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_4\N1\obj\Debug\N1.exe
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_4\N1\obj\Debug\N1.pdb
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_4\N1\obj\Debug\AddWindow.g.cs
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_4\N1\obj\Debug\AddWindow.baml
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_4\N1\bin\Debug\DB_Laba_4.db

@@ -15,20 +15,31 @@
             <Setter Property="Background" Value="White"/>
         </Style>
     </Window.Resources>
-    
+
     <Grid>
-        <DataGrid x:Name="dg_Jurnal" Margin="0,24,0,0" Loaded="dg_Jurnal_Loaded" AutoGenerateColumns="False">
+        <Button x:Name="btn_add" Content="Добавить" HorizontalAlignment="Right" VerticalAlignment="Top" Click="btn_add_Click"/>
+        <DataGrid x:Name="dg_Journal" Margin="0,20,0,0" Loaded="dg_Journal_Loaded" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="№" />
                 <DataGridTextColumn Width="*" Binding="{Binding StudentFIO}" Header="ФИО" />
                 <DataGridTextColumn Binding="{Binding Physics}" Header="Физика" />
                 <DataGridTextColumn Binding="{Binding Math}" Header="Математика" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_edit" Content="Изменить" Click="btn_edit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_del" Content="Удалить" Click="btn_del_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Menu Height="24px" Margin="0,0,0,0" VerticalAlignment="Top">
-            <MenuItem Header="Добавить"></MenuItem>
-            <MenuItem Header="Изменить"></MenuItem>
-            <MenuItem Header="Удалить"></MenuItem>
-        </Menu>
+        <Button x:Name="btn_Update" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btn_Update_Click"/>
     </Grid>
 </Window>
