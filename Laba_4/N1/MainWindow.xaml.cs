@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.SQLite;
+using System.Data.SQLite; 
 
 
 namespace N1
@@ -22,9 +22,46 @@ namespace N1
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        DBEntities db = new DBEntities();
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        public void UpdateTable() 
+        { 
+            try 
+            {
+                //var students = from s in db.Students
+                //               select new
+                //               { id = s.id, FirstName = s.FirstName};
+
+                //dg_Jurnal.ItemsSource = students.ToList();
+
+                var jurnal = from j in db.Journals
+                             join stud in db.Students on j.id_Student equals stud.id
+                             join sub in db.Subjects on j.id_Subject equals sub.id
+                             select new
+                               { id = j.id, id_Student = stud.FirstName, id_Subject = sub.Name, Grade = j.Grade};
+
+                dg_Jurnal.ItemsSource = jurnal.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void dg_Jurnal_Loaded(object sender, RoutedEventArgs e)
+        {
+
+           
+
+            UpdateTable();
+        }
+
     }
 }
