@@ -24,6 +24,7 @@ namespace N1
     {
 
         DBEntities db = new DBEntities();
+        public int id_selectedJournal;
 
         public MainWindow()
         {
@@ -37,7 +38,7 @@ namespace N1
                 var journal = from j in db.Journals
                              join stud in db.Students on j.id_Student equals stud.id
                              select new
-                               { id = j.id, StudentFIO = stud.FirstName + " " + stud.Surname + " " + stud.LastName, Physics = j.Physics, Math = j.Math};
+                               { id = j.id, StudentFIO = stud.FirstName + " " + stud.Surname + " " + stud.MiddleName, Physics = j.Physics, Math = j.Math};
 
                 dg_Journal.ItemsSource = journal.ToList();
 
@@ -53,15 +54,19 @@ namespace N1
             UpdateTable();
         }
 
+        public int GetId()
+        {
+            var ci = new DataGridCellInfo(dg_Journal.SelectedItem, dg_Journal.Columns[0]);
+            int id_journal = Convert.ToInt32((ci.Column.GetCellContent(ci.Item) as TextBlock).Text);
+            return id_journal;
+        }
+
         private void btn_del_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Вы действительно хотите удалить информацию о студенте?", "Подтверждение удаления", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             { 
-                try 
-                {                   
-                    var ci = new DataGridCellInfo(dg_Journal.SelectedItem, dg_Journal.Columns[0]);
-                    var id_journal = Convert.ToInt32((ci.Column.GetCellContent(ci.Item) as TextBlock).Text);
-
+                try {
+                    var id_journal = GetId();
                     Journal journal = db.Journals.Where(j => j.id == id_journal).FirstOrDefault();
                     db.Journals.Remove(journal);
                     db.SaveChanges();
@@ -80,12 +85,25 @@ namespace N1
         {
             AddWindow addWindow = new AddWindow();
             addWindow.ShowDialog();
+            if (addWindow.DialogResult == true)
+            {
+                UpdateTable();
+            }
 
         }
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
+            id_selectedJournal = GetId();
 
+            EditWindow editWindow = new EditWindow();
+            editWindow.id_selectedJournal = id_selectedJournal;
+            editWindow.ShowDialog();
+
+            if (editWindow.DialogResult == true)
+            {
+                UpdateTable();
+            }
         }
 
         private void btn_Update_Click(object sender, RoutedEventArgs e)

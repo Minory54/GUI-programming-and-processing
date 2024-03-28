@@ -1,12 +1,12 @@
-﻿<Window x:Class="N1.AddWindow"
+﻿<Window x:Class="N1.EditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:N1"
         mc:Ignorable="d"
-        Title="Добавление" Height="350" Width="300">
-
+        Title="Редактирование" Height="350" Width="300" Loaded="Window_Loaded">
+    
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="VerticalAlignment" Value="Top"></Setter>
