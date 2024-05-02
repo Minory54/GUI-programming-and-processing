@@ -37,7 +37,7 @@
         <TextBox x:Name="tb_Message" HorizontalAlignment="Right" Margin="0,0,10,39" VerticalAlignment="Bottom" TextWrapping="Wrap" Width="250" Height="51" />
 
         <Button x:Name="btn_Connect" Content="Connect" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Click="btn_Connect_Click"/>
-        <Button x:Name="btn_Disconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="90,0,0,10" VerticalAlignment="Bottom" Click="btn_Disconnect_Click"/>
-        <Button x:Name="btn_Send" Content="Send" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Click="btn_Send_Click"/>
+        <Button x:Name="btn_Disconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="90,0,0,10" VerticalAlignment="Bottom" Click="btn_Disconnect_Click" IsEnabled="False"/>
+        <Button x:Name="btn_Send" Content="Send" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Click="btn_Send_Click" IsEnabled="False"/>
     </Grid>
 </Window>

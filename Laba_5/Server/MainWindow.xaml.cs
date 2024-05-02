@@ -41,13 +41,13 @@ namespace Server
                 try 
                 { 
                     TcpClient client = listener.AcceptTcpClient();
-                    Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Новый клиент подключен.")));
+                    Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Новый клиент подключен!")));
                     Thread clientThread = new Thread(() => Process(client));
                     clientThread.Start();
                 }
                 catch (Exception ex) 
                 {
-                    Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add(ex.Message)));
+                    
                 }
             }
         }
@@ -73,10 +73,17 @@ namespace Server
                     }
                     while (stream.DataAvailable && server);
                     string message = builder.ToString();
+                    if (message == "-1")
+                    {
+                        Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Клиент отключен!")));                      
+                        break;
+                    }
+
                     Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add(message)));
-                    
-                    data = Encoding.Unicode.GetBytes(message);
+                    string reversed = new string(message.Reverse().ToArray());
+                    data = Encoding.Unicode.GetBytes(reversed);
                     stream.Write(data, 0, data.Length);
+                    
                 }
             }
             catch (Exception ex)
@@ -105,19 +112,32 @@ namespace Server
                 Thread listenThread = new Thread(() => listen());
                 listenThread.Start();   
                 
-                lb_log.Items.Add("Вроде подключилось");
+                lb_log.Items.Add("Сервер запущен!");
+
+                btn_startServer.IsEnabled = false;
+                btn_stopServer.IsEnabled = true;
             }
             catch 
             {
-                lb_log.Items.Add("Произошла ошибка!");
+                lb_log.Items.Add("Произошла ошибка при запуске сервера!");
             } 
         }
 
         private void btn_stopServer_Click(object sender, RoutedEventArgs e)
         {
-            server = false;
-            listener.Stop();
-            lb_log.Items.Add("Сервер вроде остановлен");
+            try
+            {
+                server = false;
+                listener.Stop();
+                lb_log.Items.Add("Сервер остановлен!");
+
+                btn_startServer.IsEnabled = true;
+                btn_stopServer.IsEnabled = false;
+            }
+            catch
+            {
+                lb_log.Items.Add("Произошла ошибка при остановке сервера!");
+            }
         }
     }
 }
