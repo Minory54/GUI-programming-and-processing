@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_5\Server\obj\Debug\
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_5\Server\obj\Release\
 Server
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_5\Server\App.xaml
 1219584333
 
@@ -16,5 +16,5 @@ C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_5\Serve
 13-1310406943
 MainWindow.xaml;
 
-False
+True
 

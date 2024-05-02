@@ -25,7 +25,6 @@ namespace Server
 
     public partial class MainWindow : Window
     {
-
         int port = 8888;
         static TcpListener listener;
         bool server;
@@ -37,12 +36,19 @@ namespace Server
 
         void listen()
         {
-            while (true)
+            while (server)
             {
-                TcpClient client = listener.AcceptTcpClient();
-                Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Новый клиент подключен.")));
-                Thread clientThread = new Thread(() => Process(client));
-                clientThread.Start();
+                try 
+                { 
+                    TcpClient client = listener.AcceptTcpClient();
+                    Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Новый клиент подключен.")));
+                    Thread clientThread = new Thread(() => Process(client));
+                    clientThread.Start();
+                }
+                catch (Exception ex) 
+                {
+                    Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add(ex.Message)));
+                }
             }
         }
 
@@ -56,8 +62,8 @@ namespace Server
                 stream = client.GetStream(); 
                 byte[] data = new byte[64];
 
-                while (true)
-                {
+                while (server)
+                {                   
                     StringBuilder builder = new StringBuilder();
                     int bytes = 0;
                     do
@@ -65,11 +71,10 @@ namespace Server
                         bytes = stream.Read(data, 0, data.Length);
                         builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                     }
-                    while (stream.DataAvailable);
+                    while (stream.DataAvailable && server);
                     string message = builder.ToString();
                     Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add(message)));
                     
-
                     data = Encoding.Unicode.GetBytes(message);
                     stream.Write(data, 0, data.Length);
                 }
@@ -94,11 +99,13 @@ namespace Server
             {
                 listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
                 listener.Start();
-               
+
+                server = true;
+
                 Thread listenThread = new Thread(() => listen());
                 listenThread.Start();   
                 
-                lb_log.Items.Add("Вроде подлючилось");
+                lb_log.Items.Add("Вроде подключилось");
             }
             catch 
             {
@@ -108,6 +115,7 @@ namespace Server
 
         private void btn_stopServer_Click(object sender, RoutedEventArgs e)
         {
+            server = false;
             listener.Stop();
             lb_log.Items.Add("Сервер вроде остановлен");
         }
