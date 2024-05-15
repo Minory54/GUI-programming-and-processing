@@ -20,6 +20,6 @@
         <Label Content="Server log:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lb_log" Margin="10,45,10,45"/>
         <Button x:Name="btn_startServer" Content="Start server" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Click="btn_startServer_Click"/>
-        <Button x:Name="btn_stopServer" Content="Stop server" HorizontalAlignment="Left" Margin="100,0,0,10" VerticalAlignment="Bottom" Click="btn_stopServer_Click"/>
+        <Button x:Name="btn_stopServer" Content="Stop server" HorizontalAlignment="Left" Margin="100,0,0,10" VerticalAlignment="Bottom" Click="btn_stopServer_Click" IsEnabled="False"/>
     </Grid>
 </Window>

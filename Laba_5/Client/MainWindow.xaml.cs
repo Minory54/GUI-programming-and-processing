@@ -52,17 +52,20 @@ namespace Client
                         builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                     }
                     while (stream.DataAvailable);
+
                     string message = builder.ToString();
+
+                    if (message == "") break;
+
                     Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Сервер: " + message)));
                 }
             }
             catch (Exception ex)
             {
-                lb_log.Items.Add(ex.Message);
+                Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Произошла ошибка при подключении!")));
             }
             finally
             {
-                //закрыть канал связи и завершить работу клиента
                 stream.Close();
                 client.Close();
             }
@@ -75,13 +78,18 @@ namespace Client
             {
                 client = new TcpClient(address, port);
                 stream = client.GetStream();
+
+                btn_Connect.IsEnabled = false;
+                btn_Disconnect.IsEnabled = true;
+                btn_Send.IsEnabled = true;
             }
             catch (Exception ex)
             {
-                lb_log.Items.Add(ex.Message);
+                Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Произошла ошибка при подключении!")));
             }
 
             Thread listenThread = new Thread(() => listen());
+            listenThread.IsBackground = true;
             listenThread.Start();
 
         }
@@ -89,14 +97,36 @@ namespace Client
         private void btn_Disconnect_Click(object sender, RoutedEventArgs e)
         {
 
+            try
+            {
+                string message = "-1";
+                byte[] data = Encoding.Unicode.GetBytes(message);
+                stream.Write(data, 0, data.Length);
+
+                btn_Connect.IsEnabled = true;
+                btn_Disconnect.IsEnabled = false;
+                btn_Send.IsEnabled = false;
+            }
+            catch (Exception ex)
+            {
+                Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Произошла ошибка при отключении!")));
+            }
+
         }
 
         private void btn_Send_Click(object sender, RoutedEventArgs e)
         {
-            string message = tb_Message.Text;
-            message = String.Format("{0}: {1}", username, message);
-            byte[] data = Encoding.Unicode.GetBytes(message);
-            stream.Write(data, 0, data.Length);
+            try
+            {
+                string message = tb_Message.Text;
+                message = String.Format("{0}: {1}", username, message);
+                byte[] data = Encoding.Unicode.GetBytes(message);
+                stream.Write(data, 0, data.Length);
+            }
+            catch (Exception ex)
+            {
+                Dispatcher.BeginInvoke(new Action(() => lb_log.Items.Add("Произошла ошибка при отправке сообщения!")));
+            }
         }
     }
 }
