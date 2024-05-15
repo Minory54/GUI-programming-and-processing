@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Timer
 {
@@ -22,7 +23,6 @@ namespace Timer
     public partial class MainWindow : Window
     {
         Dictionary<string, DateTime> timerList = new Dictionary<string, DateTime>();
-        DateTime dateTimeSelected = new DateTime();
 
         public string editNameTimer;
         public DateTime editTimerDateTime;
@@ -35,72 +35,101 @@ namespace Timer
         private void mi_addTimer_Click(object sender, RoutedEventArgs e)
         {
             AddTimer addTimer = new AddTimer();
-            if (addTimer.ShowDialog() == true) 
+            if (addTimer.ShowDialog() == true)
             {
-                lb_timerList.Items.Add(addTimer.newTimerName);
                 timerList.Add(addTimer.newTimerName, addTimer.newTimerDateTime);
-            }            
+                lb_timerList.Items.Add(addTimer.newTimerName);
+            }
         }
 
         private void mi_editTimer_Click(object sender, RoutedEventArgs e)
         {
-            editNameTimer = (string)lb_timerList.SelectedValue;
-            editTimerDateTime = timerList[editNameTimer];
+            if (lb_timerList.SelectedIndex != -1)
+            {
+                editNameTimer = (string)lb_timerList.SelectedValue;
+                editTimerDateTime = timerList[editNameTimer];
+
+                AddTimer addTimer = new AddTimer(editNameTimer, editTimerDateTime);
+              
+                if (addTimer.ShowDialog() == true)
+                {
+                    timerList.Remove(lb_timerList.Items[lb_timerList.SelectedIndex].ToString());
+                    lb_timerList.Items.Remove(lb_timerList.SelectedItem);
+
+                    lb_timerList.SelectedItem = null;
+
+                    timerList.Add(addTimer.newTimerName, addTimer.newTimerDateTime);
+                    lb_timerList.Items.Add(addTimer.newTimerName);
+                }
+            }
+
             //timerList.Remove(editNameTimer);
 
-            AddTimer addTimer = new AddTimer();
-            if (addTimer.ShowDialog() == true)
-            {
-                lb_timerList.SelectedItem = addTimer.newTimerName;
-                timerList.Add(addTimer.newTimerName, addTimer.newTimerDateTime);
-            }
-            
+            //if (addTimer.ShowDialog() == true)
+            //{
+            //    lb_timerList.SelectedItem = addTimer.newTimerName;
+            //    timerList.Add(addTimer.newTimerName, addTimer.newTimerDateTime);
+            //}
         }
 
         private void mi_delTimer_Click(object sender, RoutedEventArgs e)
         {
-            lb_timerList.Items.Remove(lb_timerList.SelectedItem);
+            if (lb_timerList.SelectedIndex != -1)
+            {
+                timerList.Remove(lb_timerList.Items[lb_timerList.SelectedIndex].ToString());
+                lb_timerList.Items.Remove(lb_timerList.SelectedItem);
+            }
         }
 
         private void mi_openFile_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Document";
             dlg.DefaultExt = ".txt";
             dlg.Filter = "Text documents (.txt)|*.txt";
-
-            if (dlg.ShowDialog() == true)
+            dlg.ShowDialog();
+            string line;
+            System.IO.StreamReader file = new System.IO.StreamReader($"{dlg.FileName}");
+            while ((line = file.ReadLine()) != null)
             {
-                FileStream fs = File.OpenRead(dlg.FileName);
-                byte[] array = new byte[fs.Length];
-                fs.Read(array, 0, array.Length);
-                string textFromFile = System.Text.Encoding.UTF8.GetString(array);
-                lb_timerList.Items.Add($"{textFromFile}");
+                if (timerList.ContainsKey(line.Split()[0]) == false)
+                {
+                    timerList.Add(line.Split()[0], Convert.ToDateTime(line.Split()[1] + " " + line.Split()[2]));
+                    lb_timerList.Items.Add(line.Split()[0]);
+                }
             }
         }
 
         private void mi_saveFile_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Document";
             dlg.DefaultExt = ".txt";
             dlg.Filter = "Text documents (.txt)|*.txt";
 
-            string text = Convert.ToString(lb_timerList.Items[0]);
+            string[] lines = new string[lb_timerList.Items.Count];
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i] = lb_timerList.Items[i].ToString();
+            }
 
             if (dlg.ShowDialog() == true)
             {
-                using (FileStream fstream = new FileStream(dlg.FileName, FileMode.OpenOrCreate))
+                using (StreamWriter outputFile = new StreamWriter($"{dlg.FileName}"))
                 {
-                    byte[] array = System.Text.Encoding.UTF8.GetBytes(text);
-                    fstream.Write(array, 0, array.Length);
+                    foreach (string line in lines)
+                        outputFile.WriteLine(line + " " + timerList[line].ToString());
                 }
             }
         }
 
         private void lb_timerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DateTime dateTimeNow = DateTime.Now;            
-            TimeSpan ts = dateTimeSelected - dateTimeNow;
-            MessageBox.Show("Дни:" + ts.Days + " Время: " + ts.Hours + ":" + ts.Minutes + ":" + ts.Seconds, "Оставшееся время");           
+            if (lb_timerList.SelectedIndex != -1)
+            {
+                TimeSpan ts = DateTime.Now - timerList[lb_timerList.Items[lb_timerList.SelectedIndex].ToString()];
+                MessageBox.Show("Дни:" + (Math.Abs(ts.Days)).ToString() + " Время: " + (Math.Abs(ts.Hours)).ToString() + ":" + (Math.Abs(ts.Minutes)).ToString() + ":" + (Math.Abs(ts.Seconds)).ToString(), "Оставшееся время");
+            }
         }
     }
 }

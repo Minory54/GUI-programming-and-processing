@@ -27,10 +27,10 @@
         <TextBox x:Name="tb_timerName" HorizontalAlignment="Left" Margin="54,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
         <Label Content="Часы" HorizontalAlignment="Left" Margin="19,75,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_timerHour" HorizontalAlignment="Left" Margin="10,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+        <TextBox x:Name="tb_timerHour" HorizontalAlignment="Left" Margin="10,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" />
 
         <Label Content="Минуты" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_timerMinute" Margin="70,101,71,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+        <TextBox x:Name="tb_timerMinute" Margin="70,101,71,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" />
 
         <Label Content="Секунды" HorizontalAlignment="Left" Margin="132,75,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tb_timerSecond" Margin="0,101,10,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
