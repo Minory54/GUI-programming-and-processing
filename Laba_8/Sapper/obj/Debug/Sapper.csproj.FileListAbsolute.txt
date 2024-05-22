@@ -13,3 +13,5 @@ C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sappe
 C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.csproj.CoreCompileInputs.cache
 C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.exe
 C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.pdb
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper_Content.g.cs
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\assets\explode.mp3

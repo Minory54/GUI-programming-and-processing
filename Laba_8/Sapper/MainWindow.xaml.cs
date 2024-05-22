@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -14,16 +15,22 @@ namespace Sapper
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly int ButtonSize = 40;
+        private int ButtonSize = 40;
 
-        private readonly int FieldSize = 10;
+        private int Mines = 50;
+        private int FieldSizeX = 10;
+        private int FieldSizeY = 10;
 
-        private readonly int Mines = 50;
+        private int WinScore;
 
         private readonly BitmapImage MineImg = new BitmapImage(new Uri(@"pack://application:,,,/assets/mine.png",
                                             UriKind.Absolute));
         private readonly BitmapImage FlagImg = new BitmapImage(new Uri(@"pack://application:,,,/assets/flag.png",
                                                                         UriKind.Absolute));
+
+        private MediaPlayer Explode = new MediaPlayer();
+        private MediaPlayer Correct = new MediaPlayer();
+
 
         MineGenerator MineGenerator;
 
@@ -45,41 +52,42 @@ namespace Sapper
         {
             InitializeComponent();
 
-            ///
-            /// Заполнение грида ячейками по заданным параметрам
-            ///
+            MediaPlayer Explode = new MediaPlayer();
+            Explode.Open(new Uri(@"pack://application:,,,/assets/explode.mp3", UriKind.Absolute));
+            Explode.Volume = 0.5;
+            Explode.Play();
+            
+
+            WinScore = (FieldSizeX * FieldSizeY * 100) - (Mines * 100);
 
             Score.Text = "0";
+            MineGenerator = new MineGenerator();
 
-            MineGenerator = new MineGenerator(ref Score);
-
-            MainFrame.Rows = FieldSize;
-            MainFrame.Columns = FieldSize;
+            MainFrame.Rows = FieldSizeX;
+            MainFrame.Columns = FieldSizeY;
 
             MainFrame.Height = MainFrame.Rows * (ButtonSize + 4);
             MainFrame.Width = MainFrame.Columns * (ButtonSize + 4);
 
             MainFrame.Margin = new Thickness(5);
 
-            ///
-            /// Делаем кнопочки во всех ячейках
-            ///
-
             Field = new int[MainFrame.Rows, MainFrame.Columns];
 
-            for (int i = 0; i < FieldSize; i++)
+            for (int i = 0; i < FieldSizeX; i++)
             {
-                for (int j = 0; j < FieldSize; j++)
+                for (int j = 0; j < FieldSizeY; j++)
                 {
                     Field[i, j] = 0;
                 }
             }
 
-            MineGenerator.plantMines(Mines, FieldSize, Field);
+            MineGenerator.plantMines(Mines, FieldSizeX, FieldSizeY, Field);
 
-            for (int i = 0; i < FieldSize; i++)
+            MainFrame.Children.Clear();
+
+            for (int i = 0; i < FieldSizeX; i++)
             {
-                for (int j = 0; j < FieldSize; j++)
+                for (int j = 0; j < FieldSizeY; j++)
                 {
                     Button Btn = new Button();
                     Btn.Tag = Field[i, j];
@@ -91,6 +99,27 @@ namespace Sapper
                     MainFrame.Children.Add(Btn);
                 }
             }
+        }
+
+        private void btn_StartOwnGame(object sender, EventArgs e)
+        {
+            try
+            {
+                Mines = Convert.ToInt32(OwnMines.Text);
+                FieldSizeX = Convert.ToInt32(OwnX.Text);
+                FieldSizeY = Convert.ToInt32(OwnY.Text);
+
+                if (Mines == 0 || FieldSizeX == 0 || FieldSizeY == 0)
+                {
+                    MessageBox.Show("Ошибка ввода данных", "Ситуация...");
+                    Mines = 50; FieldSizeX = 10; FieldSizeY = 10;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка ввода данных", "Ситуация...");
+            }
+            InitializeGame();
         }
 
         private void Btn_OnClick(object sender, MouseButtonEventArgs e)
@@ -138,7 +167,22 @@ namespace Sapper
 
                     if ((int)button.Tag != 9)
                     {
+                        Correct.Play();
+
                         Score.Text = Convert.ToString(Convert.ToInt32(Score.Text) + 100);
+
+                        if (Convert.ToInt32(Score.Text) == WinScore)
+                        {
+                            MessageBox.Show($"Вы победили!!!!!!! Красивая игра!!!!!!!!\nТвой счёт: {Score.Text}");
+                        }
+                    }
+                    else
+                    {
+                        Explode.Play();
+                        MessageBox.Show("Не знаю, попробуй в солдатиков поиграть, " +
+                                        $"а не в сапёра, там не нужно столько мозгов\nТвой счёт: {Score.Text}");
+                        Score.Text = "0";
+                        InitializeGame();
                     }
 
                     return;

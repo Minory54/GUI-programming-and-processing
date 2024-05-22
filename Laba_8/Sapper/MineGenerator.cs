@@ -15,29 +15,20 @@ namespace Sapper
 {
     public class MineGenerator
     {
-        public TextBlock Score;
-
-        public MineGenerator(ref TextBlock score) 
-        { 
-            Score = score;
-        }
-
-
-
-        public void plantMines(int mines, int FieldSize, int[,] Field)
+        public void plantMines(int mines, int FieldSizeX, int FieldSizeY, int[,] Field)
         {
             int currentMines = 0;
             var random = new Random();
 
             while (currentMines < mines)
             {
-                Field[random.Next(0, 10), random.Next(0, 10)] = 9;
+                Field[random.Next(0, FieldSizeX), random.Next(0, FieldSizeY)] = 9;
                 currentMines++;
             }
 
-            for (int i = 0; i < FieldSize; i++)
+            for (int i = 0; i < FieldSizeX; i++)
             {
-                for (int j = 0; j < FieldSize; j++)
+                for (int j = 0; j < FieldSizeY; j++)
                 {
                     if (Field[i, j] == 9)
                     {
@@ -53,7 +44,7 @@ namespace Sapper
                                 int ni = i + x;
                                 int nj = j + y;
 
-                                if (ni >= 0 && ni < FieldSize && nj >= 0 && nj < FieldSize && Field[ni, nj] != 9)
+                                if (ni >= 0 && ni < FieldSizeX && nj >= 0 && nj < FieldSizeY && Field[ni, nj] != 9)
                                 {
                                     Field[ni, nj]++;
                                 }
