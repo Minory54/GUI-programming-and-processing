@@ -1,0 +1,15 @@
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\bin\Debug\2D.exe.config
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\bin\Debug\2D.exe
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\bin\Debug\2D.pdb
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D.csproj.AssemblyReference.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\MainWindow.g.cs
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\App.g.cs
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D_MarkupCompile.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D_MarkupCompile.lref
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\MainWindow.baml
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D.g.resources
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\_2D.Properties.Resources.resources
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D.csproj.GenerateResource.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D.csproj.CoreCompileInputs.cache
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D.exe
+C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\2D\obj\Debug\2D.pdb

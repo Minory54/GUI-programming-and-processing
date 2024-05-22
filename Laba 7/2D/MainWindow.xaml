@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2D"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Canvas x:Name="scene">
+        Title="MainWindow" Height="305" Width="300" ResizeMode="NoResize">
+    <Canvas x:Name="scene" Margin="10">
         
     </Canvas>
 </Window>

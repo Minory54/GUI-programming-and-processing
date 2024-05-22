@@ -5,6 +5,11 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2D", "2D\2D.csproj", "{0DE7517B-46B6-4D13-BDE7-3855FA09A0FB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pic", "pic", "{0DB82172-A18A-4FE3-8AF7-0CF90A2ACB38}"
+	ProjectSection(SolutionItems) = preProject
+		testpic.jpg = testpic.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
