@@ -1,0 +1,15 @@
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\Sapper.exe.config
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\Sapper.exe
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\Sapper.pdb
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.csproj.AssemblyReference.cache
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\MainWindow.g.cs
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\App.g.cs
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper_MarkupCompile.cache
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper_MarkupCompile.lref
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\MainWindow.baml
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.g.resources
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.Properties.Resources.resources
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.csproj.GenerateResource.cache
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.csproj.CoreCompileInputs.cache
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.exe
+C:\Users\Kamys\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.pdb
