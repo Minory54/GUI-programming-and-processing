@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mp3_Player"
         mc:Ignorable="d"
-        Title="mp3" MinHeight="450" Height="450" MinWidth="300" Width="300">
+        Title="mp3" MinHeight="450" Height="450" MinWidth="300" Width="600">
 
     <Window.Resources>
         <Style TargetType="Label" x:Key="lb_title">
@@ -24,23 +24,27 @@
     <Grid>
         <Menu VerticalAlignment="Top" Height="20" Background="White">
             <MenuItem Header="Файл">
-                <MenuItem x:Name="mi_openFile" Header="Добавить файл"></MenuItem>
+                <MenuItem x:Name="mi_addFile" Header="Добавить файл" Click="mi_addFile_Click"></MenuItem>
+                <MenuItem x:Name="mi_delFile" Header="Удалить файл" Click="mi_delFile_Click"></MenuItem>
             </MenuItem>
         </Menu>
 
-        <ListBox x:Name="lb_listMusic" Margin="10,20,10,150"/>
+        <ListBox x:Name="lb_listMusic" Margin="10,20,10,150" MouseDoubleClick="lb_listMusic_MouseDoubleClick"/>
 
-        <Label x:Name="lb_name" Style="{StaticResource lb_title}" Content="Название" HorizontalAlignment="Left" Margin="10,0,0,110" VerticalAlignment="Bottom"/>
-        <Label x:Name="lb_time" Content="0:00" HorizontalAlignment="Right" Margin="0,0,10,110" VerticalAlignment="Bottom"/>
+        <Label x:Name="lb_name" Style="{StaticResource lb_title}" Content="..." HorizontalAlignment="Left" Margin="10,0,0,110" VerticalAlignment="Bottom"/>
+        <Label x:Name="lb_timer" Content="0:00" HorizontalAlignment="Right" Margin="0,0,123,81" VerticalAlignment="Bottom"/>
+        <Label x:Name="lb_timerTotal" Content="0:00" HorizontalAlignment="Right" Margin="0,0,445,81" VerticalAlignment="Bottom"/>
         
-        <Slider x:Name="sl_player" HorizontalAlignment="Stretch" Margin="10,0,10,85" VerticalAlignment="Bottom" Width="280"/>
+        <Slider x:Name="sl_player" HorizontalAlignment="Stretch" Margin="10,0,10,85" VerticalAlignment="Bottom" Width="280" ValueChanged="sl_player_ValueChanged"/>
 
-        <Button x:Name="btn_play" Content="▶︎" HorizontalAlignment="Center" Margin="0,0,90,45" VerticalAlignment="Bottom"/>
-        <Button x:Name="btn_pause" Content="❚❚" HorizontalAlignment="Center" Margin="0,80,0,45" VerticalAlignment="Bottom"/>
-        <Button x:Name="btn_stop" Content="■" HorizontalAlignment="Center" Margin="90,0,0,45" VerticalAlignment="Bottom"/>
+        <Button x:Name="btn_play" Content="▶︎" HorizontalAlignment="Center" Margin="0,0,90,45" VerticalAlignment="Bottom" Click="btn_play_Click"/>
+        <Button x:Name="btn_pause" Content="❚❚" HorizontalAlignment="Center" Margin="0,80,0,45" VerticalAlignment="Bottom" Click="btn_pause_Click"/>
+        <Button x:Name="btn_stop" Content="⬛" HorizontalAlignment="Center" Margin="90,0,0,45" VerticalAlignment="Bottom" Click="btn_stop_Click"/>
+
+        <Button x:Name="btn_rand" Content="➰" HorizontalAlignment="Right" Margin="0,0,10,45" VerticalAlignment="Bottom" Click="btn_rand_Click"/>
 
         <Label Content="🔈" Foreground="MediumSlateBlue" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,90,5"/>
-        <Slider x:Name="sl_sound" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100" Margin="30,0,0,10"/>
-
+        <Slider x:Name="sl_volume" Maximum="1" Value="0.1" TickFrequency="-2" LargeChange="0.1"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100" Margin="30,0,0,10" ValueChanged="sl_volume_ValueChanged"/>
+        
     </Grid>
 </Window>

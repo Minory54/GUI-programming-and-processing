@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3 Player", "Mp3 Player\Mp3 Player.csproj", "{0FB83194-AC99-427E-8C4E-477E65997216}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp4 Player", "Mp4 Player\Mp4 Player.csproj", "{DC38DBC4-7B17-41C7-92DE-EBD13320B7CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0FB83194-AC99-427E-8C4E-477E65997216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FB83194-AC99-427E-8C4E-477E65997216}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FB83194-AC99-427E-8C4E-477E65997216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC38DBC4-7B17-41C7-92DE-EBD13320B7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC38DBC4-7B17-41C7-92DE-EBD13320B7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC38DBC4-7B17-41C7-92DE-EBD13320B7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC38DBC4-7B17-41C7-92DE-EBD13320B7CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
