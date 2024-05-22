@@ -5,21 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mp3_Player"
         mc:Ignorable="d"
-        Title="mp3" Height="450" Width="800">
+        Title="mp3" MinHeight="450" Height="450" MinWidth="300" Width="300">
 
     <Window.Resources>
-        <Style TargetType="DataGrid">
+        <Style TargetType="Label" x:Key="lb_title">
             <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
         </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="Lavender"></Setter>
             <Setter Property="BorderBrush" Value="#FFBEBEF1"></Setter>
             <Setter Property="BorderThickness" Value="2px"></Setter>
             <Setter Property="Padding" Value="8,2,8,2"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
         </Style>
     </Window.Resources>
 
     <Grid>
+        <Menu VerticalAlignment="Top" Height="20" Background="White">
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="mi_openFile" Header="Добавить файл"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <ListBox x:Name="lb_listMusic" Margin="10,20,10,150"/>
+
+        <Label x:Name="lb_name" Style="{StaticResource lb_title}" Content="Название" HorizontalAlignment="Left" Margin="10,0,0,110" VerticalAlignment="Bottom"/>
+        <Label x:Name="lb_time" Content="0:00" HorizontalAlignment="Right" Margin="0,0,10,110" VerticalAlignment="Bottom"/>
         
+        <Slider x:Name="sl_player" HorizontalAlignment="Stretch" Margin="10,0,10,85" VerticalAlignment="Bottom" Width="280"/>
+
+        <Button x:Name="btn_play" Content="▶︎" HorizontalAlignment="Center" Margin="0,0,90,45" VerticalAlignment="Bottom"/>
+        <Button x:Name="btn_pause" Content="❚❚" HorizontalAlignment="Center" Margin="0,80,0,45" VerticalAlignment="Bottom"/>
+        <Button x:Name="btn_stop" Content="■" HorizontalAlignment="Center" Margin="90,0,0,45" VerticalAlignment="Bottom"/>
+
+        <Label Content="🔈" Foreground="MediumSlateBlue" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,90,5"/>
+        <Slider x:Name="sl_sound" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100" Margin="30,0,0,10"/>
+
     </Grid>
 </Window>

@@ -1,0 +1,15 @@
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\bin\Debug\Mp3 Player.exe.config
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\bin\Debug\Mp3 Player.exe
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\bin\Debug\Mp3 Player.pdb
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player.csproj.AssemblyReference.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\MainWindow.g.cs
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\App.g.cs
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player_MarkupCompile.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player_MarkupCompile.lref
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\MainWindow.baml
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player.g.resources
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3_Player.Properties.Resources.resources
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player.csproj.GenerateResource.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player.csproj.CoreCompileInputs.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player.exe
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_6\Mp3 Player\obj\Debug\Mp3 Player.pdb
