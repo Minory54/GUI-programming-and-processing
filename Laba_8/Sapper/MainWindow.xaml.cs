@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -28,11 +29,10 @@ namespace Sapper
         private readonly BitmapImage FlagImg = new BitmapImage(new Uri(@"pack://application:,,,/assets/flag.png",
                                                                         UriKind.Absolute));
 
-        private MediaPlayer Explode = new MediaPlayer();
-        private MediaPlayer Correct = new MediaPlayer();
-
-
         MineGenerator MineGenerator;
+
+        MediaPlayer Correct = new MediaPlayer();
+        MediaPlayer Explode = new MediaPlayer();
 
         private int[,] Field;
 
@@ -46,17 +46,14 @@ namespace Sapper
         public MainWindow()
         {
             InitializeGame();
+            Correct.Open(new Uri("pack://siteoforigin:,,,/assets/correct.mp3"));
+            Explode.Open(new Uri("pack://siteoforigin:,,,/assets/explode.mp3"));
+            Explode.Volume = 0.01f;
         }
 
         private void InitializeGame()
         {
             InitializeComponent();
-
-            MediaPlayer Explode = new MediaPlayer();
-            Explode.Open(new Uri(@"pack://application:,,,/assets/explode.mp3", UriKind.Absolute));
-            Explode.Volume = 0.5;
-            Explode.Play();
-            
 
             WinScore = (FieldSizeX * FieldSizeY * 100) - (Mines * 100);
 
@@ -168,6 +165,7 @@ namespace Sapper
                     if ((int)button.Tag != 9)
                     {
                         Correct.Play();
+                        Correct.Position = TimeSpan.Zero;
 
                         Score.Text = Convert.ToString(Convert.ToInt32(Score.Text) + 100);
 
@@ -179,6 +177,8 @@ namespace Sapper
                     else
                     {
                         Explode.Play();
+                        Correct.Position = TimeSpan.Zero;
+
                         MessageBox.Show("Не знаю, попробуй в солдатиков поиграть, " +
                                         $"а не в сапёра, там не нужно столько мозгов\nТвой счёт: {Score.Text}");
                         Score.Text = "0";
