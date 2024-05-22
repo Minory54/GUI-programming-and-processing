@@ -5,13 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sapper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
+        <TextBlock Text="Счёт: " 
+                   FontSize="24" 
+                   VerticalAlignment="Center"/>
+        <TextBlock x:Name="Score"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="66,0,-66,0"
+                   VerticalAlignment="Center"/>
         <UniformGrid Grid.Row="1" x:Name="MainFrame">
             
         </UniformGrid>
