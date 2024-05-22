@@ -172,17 +172,22 @@ namespace Sapper
                         if (Convert.ToInt32(Score.Text) == WinScore)
                         {
                             MessageBox.Show($"Вы победили!!!!!!! Красивая игра!!!!!!!!\nТвой счёт: {Score.Text}");
+                            //вот сюда запись в бд
                         }
+
+                        
                     }
                     else
                     {
                         Explode.Play();
-                        Correct.Position = TimeSpan.Zero;
+                        Explode.Position = TimeSpan.Zero;
 
                         MessageBox.Show("Не знаю, попробуй в солдатиков поиграть, " +
                                         $"а не в сапёра, там не нужно столько мозгов\nТвой счёт: {Score.Text}");
                         Score.Text = "0";
                         InitializeGame();
+
+                        //вот сюда запись в бд
                     }
 
                     return;
