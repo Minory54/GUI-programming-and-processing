@@ -48,7 +48,7 @@ namespace _2D
             ib.AlignmentX = AlignmentX.Left;
             ib.AlignmentY = AlignmentY.Top;
 
-            ib.ImageSource = new BitmapImage(new Uri(@"C:\Users\olesy\source\repos\GUI-programming-and-processing\Laba 7\testpic.jpg", UriKind.Absolute));
+            ib.ImageSource = new BitmapImage(new Uri(@"C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\testpic.jpg", UriKind.Absolute));
             el_clock.Fill = ib;
 
             el_clock.StrokeThickness = 3;
@@ -63,11 +63,11 @@ namespace _2D
             line_sec.Stroke = System.Windows.Media.Brushes.Blue;
             line_sec.StrokeThickness = 3;
 
-            line_sec.X1 = 130;
+            line_sec.X1 = 125;
             line_sec.Y1 = 10;
 
-            line_sec.X2 = 130;
-            line_sec.Y2 = 130;
+            line_sec.X2 = 125;
+            line_sec.Y2 = 125;
 
             scene.Children.Add(line_sec);
 
@@ -75,11 +75,11 @@ namespace _2D
             line_minute.Stroke = System.Windows.Media.Brushes.Green;
             line_minute.StrokeThickness = 3;
 
-            line_minute.X1 = 130;
+            line_minute.X1 = 125;
             line_minute.Y1 = 30;
 
-            line_minute.X2 = 130;
-            line_minute.Y2 = 130;
+            line_minute.X2 = 125;
+            line_minute.Y2 = 125;
 
             scene.Children.Add(line_minute);
 
@@ -87,11 +87,11 @@ namespace _2D
             line_hour.Stroke = System.Windows.Media.Brushes.Red;
             line_hour.StrokeThickness = 4;
 
-            line_hour.X1 = 130;
+            line_hour.X1 = 125;
             line_hour.Y1 = 50;
 
-            line_hour.X2 = 130;
-            line_hour.Y2 = 130;
+            line_hour.X2 = 125;
+            line_hour.Y2 = 125;
 
             scene.Children.Add(line_hour);
         }
@@ -105,9 +105,9 @@ namespace _2D
             min = Convert.ToInt32(dateTime.Minute);
             hour = Convert.ToInt32(dateTime.Hour);
 
-            line_sec.RenderTransform = new RotateTransform(0+(6 * sec), 130, 130);
-            line_minute.RenderTransform = new RotateTransform(0 + (6 * min), 130, 130);
-            line_hour.RenderTransform = new RotateTransform(0 + (30 * hour), 130, 130);
+            line_sec.RenderTransform = new RotateTransform(0 + (6 * sec), 125, 125);
+            line_minute.RenderTransform = new RotateTransform(0 + (6 * min), 125, 125);
+            line_hour.RenderTransform = new RotateTransform(0 + (30 * hour), 125, 125);
         }
 
     }

@@ -1,0 +1,15 @@
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\bin\Debug\3D.exe.config
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\bin\Debug\3D.exe
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\bin\Debug\3D.pdb
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D.csproj.AssemblyReference.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\MainWindow.g.cs
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\App.g.cs
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D_MarkupCompile.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D_MarkupCompile.lref
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\MainWindow.baml
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D.g.resources
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\_3D.Properties.Resources.resources
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D.csproj.GenerateResource.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D.csproj.CoreCompileInputs.cache
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D.exe
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba 7\3D\obj\Debug\3D.pdb
