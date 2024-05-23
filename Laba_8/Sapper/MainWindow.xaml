@@ -17,20 +17,12 @@
             <ColumnDefinition/>
             <ColumnDefinition Width=".5*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Счёт: " 
-                   FontSize="24" 
-                   VerticalAlignment="Center"/>
-        <TextBlock x:Name="Score"
-                   FontSize="24"
-                   FontWeight="Bold"
-                   Margin="66,0,-66,0"
-                   VerticalAlignment="Center"/>
+        
+        <TextBlock Text="Счёт: " FontSize="24" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Score" FontSize="24" FontWeight="Bold" Margin="66,0,-66,0" VerticalAlignment="Center"/>
         <UniformGrid Grid.Row="1" x:Name="MainFrame"/>
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
-            <TextBlock Text="Своя игра" 
-                       HorizontalAlignment="Center"
-                       FontSize="18"
-                       FontWeight="Black"/>
+            <TextBlock Text="Своя игра" HorizontalAlignment="Center" FontSize="18" FontWeight="Black"/>
             <TextBlock Text="Количество мин:"/>
             <TextBox x:Name="OwnMines"/>
             <TextBlock Text="Высота поля:"/>
@@ -39,6 +31,13 @@
             <TextBox x:Name="OwnY"/>
             <Button Content="НАЧАТЬ!!!" Click="btn_StartOwnGame"/>
             <TextBlock Text="Таблица рекордов:" FontSize="18" Margin="0 50 0 0"/>
+
+            <DataGrid x:Name="dg_leaderScore" Height="248" Margin="10" AutoGenerateColumns="False" Loaded="dg_leaderScore_Loaded">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Binding="{Binding name}" Header="Имя" />
+                    <DataGridTextColumn Binding="{Binding score}" Header="Счет" />
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Window>

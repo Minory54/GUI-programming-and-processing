@@ -32,3 +32,12 @@ C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sappe
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.csproj.CoreCompileInputs.cache
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.exe
 C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.pdb
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\EntityFramework.dll
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\System.Data.SQLite.dll
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\EntityFramework.xml
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\bin\Debug\System.Data.SQLite.xml
+C:\Users\olesy\source\repos\Minory54\GUI-programming-and-processing\Laba_8\Sapper\obj\Debug\Sapper.csproj.Up2Date

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -8,6 +9,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml;
+using System.Data.SQLite;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Navigation;
+
 
 namespace Sapper
 {
@@ -16,6 +25,8 @@ namespace Sapper
     /// </summary>
     public partial class MainWindow : Window
     {
+        DBEntities db = new DBEntities();
+
         private int ButtonSize = 40;
 
         private int Mines = 50;
@@ -49,6 +60,36 @@ namespace Sapper
             Correct.Open(new Uri("pack://siteoforigin:,,,/assets/correct.mp3"));
             Explode.Open(new Uri("pack://siteoforigin:,,,/assets/explode.mp3"));
             Explode.Volume = 0.01f;
+        }
+
+        public void UpdateTable()
+        {
+            //try 
+            //{
+                var leader = from l in db.LeaderBoards
+                             select new
+                             { id = l.id, name = l.name, score = l.score, dateScore = l.dateScore };
+
+
+                //LeaderBoard leader = db.LeaderBoards.Where(l => l.id == 1).FirstOrDefault();
+
+                dg_leaderScore.ItemsSource = leader.ToList();
+            //} 
+            //catch { }
+
+        }
+
+        public void AddJournal()
+        {
+            LeaderBoard leaderBoard = new LeaderBoard()
+            { 
+                name = "player",
+                score = Convert.ToInt32(Score.Text),
+                dateScore = DateTime.Now
+            };
+
+            leaderBoard = db.LeaderBoards.Add(leaderBoard);
+            db.SaveChanges();
         }
 
         private void InitializeGame()
@@ -172,10 +213,9 @@ namespace Sapper
                         if (Convert.ToInt32(Score.Text) == WinScore)
                         {
                             MessageBox.Show($"Вы победили!!!!!!! Красивая игра!!!!!!!!\nТвой счёт: {Score.Text}");
-                            //вот сюда запись в бд
-                        }
-
-                        
+                            AddJournal();
+                            UpdateTable();
+                        }                       
                     }
                     else
                     {
@@ -184,10 +224,11 @@ namespace Sapper
 
                         MessageBox.Show("Не знаю, попробуй в солдатиков поиграть, " +
                                         $"а не в сапёра, там не нужно столько мозгов\nТвой счёт: {Score.Text}");
+                        AddJournal();
+                        UpdateTable();
+
                         Score.Text = "0";
                         InitializeGame();
-
-                        //вот сюда запись в бд
                     }
 
                     return;
@@ -240,6 +281,12 @@ namespace Sapper
             stackPanel.Children.Add(image);
 
             return stackPanel;
+        }
+
+        private void dg_leaderScore_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("рыбов не показываем");
+            UpdateTable();
         }
     }
 }
