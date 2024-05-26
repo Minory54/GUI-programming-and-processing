@@ -35,10 +35,8 @@ namespace Sapper
 
         private int WinScore;
 
-        private readonly BitmapImage MineImg = new BitmapImage(new Uri(@"pack://application:,,,/assets/mine.png",
-                                            UriKind.Absolute));
-        private readonly BitmapImage FlagImg = new BitmapImage(new Uri(@"pack://application:,,,/assets/flag.png",
-                                                                        UriKind.Absolute));
+        private readonly BitmapImage MineImg = new BitmapImage(new Uri(@"pack://application:,,,/assets/mine.png", UriKind.Absolute));
+        private readonly BitmapImage FlagImg = new BitmapImage(new Uri(@"pack://application:,,,/assets/flag.png", UriKind.Absolute));
 
         MineGenerator MineGenerator;
 
@@ -59,37 +57,37 @@ namespace Sapper
             InitializeGame();
             Correct.Open(new Uri("pack://siteoforigin:,,,/assets/correct.mp3"));
             Explode.Open(new Uri("pack://siteoforigin:,,,/assets/explode.mp3"));
-            Explode.Volume = 0.01f;
+            Explode.Volume = 0.1f;
         }
 
         public void UpdateTable()
         {
-            //try 
-            //{
+            try
+            {
                 var leader = from l in db.LeaderBoards
+                             orderby l.score descending
                              select new
                              { id = l.id, name = l.name, score = l.score, dateScore = l.dateScore };
 
-
-                //LeaderBoard leader = db.LeaderBoards.Where(l => l.id == 1).FirstOrDefault();
-
                 dg_leaderScore.ItemsSource = leader.ToList();
-            //} 
-            //catch { }
-
+            }
+            catch { }
         }
 
         public void AddJournal()
         {
-            LeaderBoard leaderBoard = new LeaderBoard()
+            if (tb_name != null) 
             { 
-                name = "player",
-                score = Convert.ToInt32(Score.Text),
-                dateScore = DateTime.Now
-            };
+                LeaderBoard leaderBoard = new LeaderBoard()
+                { 
+                    name = tb_name.Text,
+                    score = Convert.ToInt32(Score.Text),
+                    dateScore = DateTime.Now
+                };
 
-            leaderBoard = db.LeaderBoards.Add(leaderBoard);
-            db.SaveChanges();
+                leaderBoard = db.LeaderBoards.Add(leaderBoard);
+                db.SaveChanges();
+            }
         }
 
         private void InitializeGame()
@@ -285,7 +283,6 @@ namespace Sapper
 
         private void dg_leaderScore_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("рыбов не показываем");
             UpdateTable();
         }
     }

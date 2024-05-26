@@ -11,28 +11,34 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width=".5*"/>
         </Grid.ColumnDefinitions>
         
-        <TextBlock Text="Счёт: " FontSize="24" VerticalAlignment="Center"/>
+        <TextBlock Text="Счёт: " Margin="10" FontSize="24" VerticalAlignment="Center"/>
         <TextBlock x:Name="Score" FontSize="24" FontWeight="Bold" Margin="66,0,-66,0" VerticalAlignment="Center"/>
         <UniformGrid Grid.Row="1" x:Name="MainFrame"/>
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
-            <TextBlock Text="Своя игра" HorizontalAlignment="Center" FontSize="18" FontWeight="Black"/>
-            <TextBlock Text="Количество мин:"/>
-            <TextBox x:Name="OwnMines"/>
-            <TextBlock Text="Высота поля:"/>
-            <TextBox x:Name="OwnX"/>
-            <TextBlock Text="Ширина поля:"/>
-            <TextBox x:Name="OwnY"/>
-            <Button Content="НАЧАТЬ!!!" Click="btn_StartOwnGame"/>
-            <TextBlock Text="Таблица рекордов:" FontSize="18" Margin="0 50 0 0"/>
+            <TextBlock Text="Своя игра" HorizontalAlignment="Center" FontSize="18" FontWeight="Black" Margin="10"/>
+            
+            <TextBlock Text="Количество мин:" Margin="10,0"/>
+            <TextBox x:Name="OwnMines" Margin="10"/>
+            
+            <TextBlock Text="Высота поля:" Margin="10, 0"/>
+            <TextBox x:Name="OwnX" Margin="10"/>
+            
+            <TextBlock Text="Ширина поля:" Margin="10, 0"/>
+            <TextBox x:Name="OwnY" Margin="10, 0"/>
+            
+            <Button Content="Начать" Click="btn_StartOwnGame" Margin="10"/>
+            <TextBlock Text="Таблица рекордов:" FontSize="18" Margin="10"/>
 
-            <DataGrid x:Name="dg_leaderScore" Height="248" Margin="10" AutoGenerateColumns="False" Loaded="dg_leaderScore_Loaded">
+            <TextBlock Text="Имя игрока:" Margin="10, 0"/>
+            <TextBox x:Name="tb_name" Text="player" Margin="10, 0"/>
+
+            <DataGrid x:Name="dg_leaderScore"  MaxHeight="198" Margin="10" AutoGenerateColumns="False" Loaded="dg_leaderScore_Loaded">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="*" Binding="{Binding name}" Header="Имя" />
                     <DataGridTextColumn Binding="{Binding score}" Header="Счет" />
